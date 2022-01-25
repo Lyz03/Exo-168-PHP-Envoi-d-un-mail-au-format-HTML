@@ -33,10 +33,16 @@ $html = '
     </html>
 ';
 
+?>
+<table style="border-collapse: collapse" border="1px solid black">
+    <?php
 foreach ($to as $value) {
     if (mail($value, 'exo 168', $html, $headers)) {
-        echo "Email envoyé avec succès à $value ...";
+        echo "<tr><td>Email envoyé</td><td>$value</td></tr>";
     } else {
-        echo "Échec de l'envoi de l'email à $value";
+        echo "<tr><td>Échec de l'envoi</td><td>$value</td></tr>";
     }
 }
+?>
+</table>
+
